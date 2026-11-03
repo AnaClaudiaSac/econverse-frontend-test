@@ -73,7 +73,10 @@ function App() {
 
         <nav className="categories page-container" aria-label="Categorias de produtos">
           <a href="#produtos" aria-label="Ver produtos por categoria">
-            <img src="/category-navigation.png" alt="Tecnologia, Supermercado, Bebidas, Ferramentas, Saúde, Esportes e Fitness e Moda" />
+            <img
+              src={`${import.meta.env.BASE_URL}category-navigation.png`}
+              alt="Tecnologia, Supermercado, Bebidas, Ferramentas, Saúde, Esportes e Fitness e Moda"
+            />
           </a>
         </nav>
 
