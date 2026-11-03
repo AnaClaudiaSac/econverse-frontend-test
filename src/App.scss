@@ -1,7 +1,7 @@
 @use 'styles/variables' as *;
 
 .page-container {
-  width: min(100% - 32px, 1120px);
+  width: min(100% - 64px, 1280px);
   margin: 0 auto;
 }
 
@@ -166,7 +166,7 @@
 
 .hero {
   position: relative;
-  min-height: 205px;
+  min-height: 390px;
   overflow: hidden;
   background-image:
     linear-gradient(90deg, rgb(0 0 0 / 77%) 0%, rgb(0 0 0 / 43%) 33%, transparent 66%),
@@ -179,13 +179,14 @@
 .hero__content {
   position: relative;
   z-index: 1;
-  padding: 48px 0;
+  padding: 84px 0 44px;
 }
 
 .hero p {
-  margin: 0 0 18px;
+  margin: 0 0 54px;
   color: $color-surface;
-  font-size: 1rem;
+  font-size: clamp(1.4rem, 2.3vw, 2rem);
+  font-weight: 500;
 }
 
 .hero p strong {
@@ -193,10 +194,11 @@
 }
 
 .hero h1 {
-  max-width: 285px;
-  margin: 0 0 4px;
-  font-size: clamp(1.7rem, 3.6vw, 2.25rem);
-  line-height: 0.98;
+  max-width: 640px;
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.08;
 }
 
 .hero a,
@@ -208,6 +210,15 @@
   font-size: 0.8rem;
   font-weight: 800;
   text-decoration: none;
+}
+
+.hero a {
+  min-width: 227px;
+  padding: 18px 32px;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .categories {
@@ -248,36 +259,6 @@
   border-radius: 26px;
 }
 
-.brands {
-  padding: 30px 0;
-}
-
-.brands__list {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 25px;
-}
-
-.brand-chip {
-  display: grid;
-  aspect-ratio: 1;
-  place-items: center;
-  border-radius: 50%;
-  background: $color-surface;
-  box-shadow: 0 6px 18px rgb(0 0 0 / 12%);
-  color: $color-footer;
-  font-size: clamp(0.9rem, 2vw, 1.4rem);
-  font-weight: 700;
-  letter-spacing: -0.08em;
-  text-decoration: none;
-}
-
-.brand-chip img {
-  display: block;
-  width: min(110px, 72%);
-  height: auto;
-}
-
 .newsletter {
   margin-top: 54px;
   background: $color-footer;
@@ -286,7 +267,7 @@
 
 .newsletter__content {
   display: grid;
-  grid-template-columns: minmax(300px, 1.05fr) minmax(580px, 1fr);
+  grid-template-columns: minmax(440px, 1.2fr) minmax(680px, 1.5fr);
   align-items: center;
   gap: 70px;
   min-height: 194px;
@@ -296,6 +277,7 @@
   margin: 0 0 10px;
   font-size: clamp(1.6rem, 3vw, 2rem);
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .newsletter p {
@@ -307,7 +289,7 @@
 
 .newsletter__form {
   display: grid;
-  grid-template-columns: 1fr 1fr 190px;
+  grid-template-columns: minmax(190px, 1fr) minmax(230px, 1.2fr) 190px;
   gap: 12px;
 }
 
@@ -357,6 +339,19 @@
   padding: 58px 0;
 }
 
+.site-footer__bottom {
+  padding: 16px;
+  border-top: 1px solid #dedede;
+  background: $color-surface;
+  color: #6d6d6d;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.site-footer__bottom p {
+  margin: 0;
+}
+
 .footer-brand {
   padding-right: 72px;
   border-right: 1px solid #cecece;
@@ -388,16 +383,22 @@
 }
 
 .footer-social a {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
   color: #4e4e4e;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1;
   text-decoration: none;
 }
 
-.footer-social a:last-child {
-  font-size: 1.45rem;
-  text-decoration: underline;
+.footer-social svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .footer-links h2 {
@@ -419,7 +420,23 @@
   color: $color-primary;
 }
 
+@media (max-width: 1250px) {
+  .newsletter__content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 0;
+  }
+}
+
 @media (max-width: 900px) {
+  .page-container {
+    width: min(100% - 32px, 1280px);
+  }
+
+  .newsletter h2 {
+    white-space: normal;
+  }
+
   .site-header__content {
     grid-template-columns: 1fr auto;
     gap: 20px;
@@ -461,10 +478,6 @@
 
   .newsletter__terms {
     grid-column: auto;
-  }
-
-  .brands__list {
-    grid-template-columns: repeat(3, 1fr);
   }
 
   .newsletter__content {

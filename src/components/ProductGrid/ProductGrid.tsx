@@ -8,11 +8,12 @@ interface ProductGridProps {
   title: string
   onSelect: (product: Product) => void
   showTabs?: boolean
+  showViewAll?: boolean
 }
 
 const tabs = ['Celular', 'Acessórios', 'Tablets', 'Notebooks', 'TVs', 'Ver todos']
 
-export function ProductGrid({ products, title, onSelect, showTabs = true }: ProductGridProps) {
+export function ProductGrid({ products, title, onSelect, showTabs = true, showViewAll = !showTabs }: ProductGridProps) {
   const titleId = useId()
   const tabListId = useId()
   const [activeTab, setActiveTab] = useState(tabs[0])
@@ -30,7 +31,7 @@ export function ProductGrid({ products, title, onSelect, showTabs = true }: Prod
         <span aria-hidden="true" />
         <div>
           <h2 id={titleId}>{title}</h2>
-          <a href="#produtos">Ver todos</a>
+          {showViewAll ? <a href="#produtos">Ver todos</a> : null}
         </div>
         <span aria-hidden="true" />
       </div>

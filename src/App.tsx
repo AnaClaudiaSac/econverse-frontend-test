@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { BrandCarousel } from './components/BrandCarousel/BrandCarousel'
 import { CategoryNav } from './components/CategoryNav/CategoryNav'
 import { Header } from './components/Header/Header'
 import { PartnerBanners } from './components/PartnerBanners/PartnerBanners'
@@ -33,9 +34,9 @@ function App() {
       <main id="inicio">
         <section className="hero" aria-label="Ofertas Black Friday">
           <div className="page-container hero__content">
-            <h1>Venha conhecer nossas promoções</h1>
+            <h1>Venha conhecer nossas<br />promoções</h1>
             <p><strong>50% Off</strong> nos produtos</p>
-            <a href="#produtos">Ver produtos</a>
+            <a href="#produtos">Ver produto</a>
           </div>
         </section>
 
@@ -46,20 +47,18 @@ function App() {
           {!error && products.length === 0 ? <p className="feedback">Carregando produtos...</p> : null}
           {products.length > 0 ? (
             <div id="produtos">
-              <ProductGrid products={products.slice(0, 4)} title="Produtos relacionados" onSelect={setSelectedProduct} />
+              <ProductGrid products={products} title="Produtos relacionados" onSelect={setSelectedProduct} />
               <PartnerBanners />
-              <section className="brands" aria-labelledby="brands-title">
-                <h2 id="brands-title" className="section-title">Navegue por marcas</h2>
-                <div className="brands__list">
-                  {Array.from({ length: 5 }, (_, index) => (
-                    <a key={index} href="#produtos" className="brand-chip" aria-label="Marca Econverse">
-                      <img src={`${import.meta.env.BASE_URL}econverse-logo.png`} alt="Econverse" />
-                    </a>
-                  ))}
-                </div>
-              </section>
               <ProductGrid
-                products={products.slice(4, 8)}
+                products={products}
+                title="Produtos relacionados"
+                onSelect={setSelectedProduct}
+                showTabs={false}
+              />
+              <PartnerBanners />
+              <BrandCarousel />
+              <ProductGrid
+                products={products}
                 title="Produtos relacionados"
                 onSelect={setSelectedProduct}
                 showTabs={false}
@@ -95,9 +94,9 @@ function App() {
             <a className="brand--footer" href="#inicio"><img src={`${import.meta.env.BASE_URL}econverse-logo.png`} alt="Econverse" /></a>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <nav className="footer-social" aria-label="Redes sociais">
-              <a href="#instagram" aria-label="Instagram">◎</a>
-              <a href="#facebook" aria-label="Facebook">f</a>
-              <a href="#linkedin" aria-label="LinkedIn">in</a>
+              <a href="#instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" /></svg></a>
+              <a href="#facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h3l.5-3H14V8.5c0-.9.3-1.5 1.7-1.5H18V4.3c-.4-.1-1.3-.3-2.5-.3-2.5 0-4.2 1.5-4.2 4.3V10H8.5v3h2.8v8" /></svg></a>
+              <a href="#linkedin" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9v9M6 6v.1M10 18v-5c0-2 1-4 3.5-4S17 11 17 13v5M10 12v6" /></svg></a>
             </nav>
           </section>
           <section className="footer-links" aria-labelledby="institutional-title">
@@ -118,6 +117,9 @@ function App() {
             <a href="#privacidade">Política de Privacidade</a>
             <a href="#troca">Troca e Devolução</a>
           </section>
+        </div>
+        <div className="site-footer__bottom">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </footer>
 
