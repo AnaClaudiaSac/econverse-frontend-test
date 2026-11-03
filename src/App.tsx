@@ -87,16 +87,12 @@ function App() {
             <div id="produtos">
               <ProductGrid products={products.slice(0, 4)} title="Produtos selecionados" onSelect={setSelectedProduct} />
               <section className="partner-banners" aria-label="Parceiros Econverse">
-                <article className="partner-banner">
-                  <h2>Parceiros</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur</p>
-                  <a href="#produtos">Confira</a>
-                </article>
-                <article className="partner-banner">
-                  <h2>Parceiros</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur</p>
-                  <a href="#produtos">Confira</a>
-                </article>
+                <a href="#produtos" aria-label="Conheça os parceiros da Econverse">
+                  <img
+                    src={`${import.meta.env.BASE_URL}partner-banners.png`}
+                    alt="Parceiros: confira nossas ofertas especiais"
+                  />
+                </a>
               </section>
               <ProductGrid products={products.slice(4, 8)} title="Produtos selecionados" onSelect={setSelectedProduct} />
               <section className="brands" aria-labelledby="brands-title">

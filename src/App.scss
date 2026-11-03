@@ -224,46 +224,18 @@
 }
 
 .partner-banners {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 26px;
   padding: 24px 0;
 }
 
-.partner-banner {
-  min-height: 285px;
-  padding: 60px 45px;
+.partner-banners a,
+.partner-banners img {
+  display: block;
+  width: 100%;
+}
+
+.partner-banners img {
+  height: auto;
   border-radius: 26px;
-  background-image:
-    linear-gradient(90deg, rgb(0 0 0 / 66%), rgb(0 0 0 / 19%)),
-    url('/partner-banners.png');
-  background-position: center;
-  background-size: cover;
-  color: $color-surface;
-}
-
-.partner-banner h2 {
-  margin: 0 0 24px;
-  font-size: clamp(1.7rem, 3vw, 2.7rem);
-}
-
-.partner-banner p {
-  max-width: 300px;
-  margin: 0 0 28px;
-  font-size: 1.15rem;
-  line-height: 1.35;
-}
-
-.partner-banner a {
-  display: inline-block;
-  padding: 17px 48px;
-  border-radius: 8px;
-  background: $color-accent;
-  color: $color-footer;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  text-transform: uppercase;
 }
 
 .brands {
@@ -486,16 +458,6 @@
 
   .newsletter__terms {
     grid-column: auto;
-  }
-
-  .partner-banners {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .partner-banner {
-    min-height: 240px;
-    padding: 40px 30px;
   }
 
   .brands__list {
