@@ -5,15 +5,6 @@ import { getProducts } from './services/products'
 import type { Product } from './types/product'
 import './App.scss'
 
-const categories = [
-  { label: 'Tecnologia', icon: '▣' },
-  { label: 'Supermercado', icon: '⌂' },
-  { label: 'Bebidas', icon: '♧' },
-  { label: 'Ferramentas', icon: '⚒' },
-  { label: 'Saúde', icon: '♡' },
-  { label: 'Esportes e Fitness', icon: '♙' },
-  { label: 'Moda', icon: '♢' },
-]
 
 function App() {
   const [products, setProducts] = useState<Product[]>([])
@@ -81,16 +72,9 @@ function App() {
         </section>
 
         <nav className="categories page-container" aria-label="Categorias de produtos">
-          {categories.map((category, index) => (
-            <a
-              key={category.label}
-              href="#produtos"
-              className={`category-link${index === 0 ? ' category-link--active' : ''}`}
-            >
-              <span aria-hidden="true">{category.icon}</span>
-              {category.label}
-            </a>
-          ))}
+          <a href="#produtos" aria-label="Ver produtos por categoria">
+            <img src="/category-navigation.png" alt="Tecnologia, Supermercado, Bebidas, Ferramentas, Saúde, Esportes e Fitness e Moda" />
+          </a>
         </nav>
 
         <div className="page-container">
