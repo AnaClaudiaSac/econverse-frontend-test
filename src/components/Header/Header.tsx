@@ -11,7 +11,7 @@ export function Header() {
       <div className="header__benefits">
         <p>🛡️ Compra <strong>100% segura</strong></p>
         <p>🚚 <strong>Frete grátis</strong> acima de R$ 200</p>
-        <p>▣ <strong>Parcele</strong> suas compras</p>
+        <p><svg className="header__benefit-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 10h18" /><path d="M7 15h4" /></svg> <strong>Parcele</strong> suas compras</p>
       </div>
       <div className="header__main page-container">
         <a className="header__brand" href="#inicio"><span>eco</span>nverse</a>
