@@ -7,11 +7,12 @@ interface ProductGridProps {
   products: Product[]
   title: string
   onSelect: (product: Product) => void
+  showTabs?: boolean
 }
 
 const tabs = ['Celular', 'Acessórios', 'Tablets', 'Notebooks', 'TVs', 'Ver todos']
 
-export function ProductGrid({ products, title, onSelect }: ProductGridProps) {
+export function ProductGrid({ products, title, onSelect, showTabs = true }: ProductGridProps) {
   const titleId = useId()
   const tabListId = useId()
   const [activeTab, setActiveTab] = useState(tabs[0])
@@ -33,12 +34,14 @@ export function ProductGrid({ products, title, onSelect }: ProductGridProps) {
         </div>
         <span aria-hidden="true" />
       </div>
-      <div className="product-grid__tabs" role="tablist" aria-label="Tipos de produtos">
-        {tabs.map((tab) => <button key={tab} id={`${tabListId}-${tab}`} role="tab" type="button" aria-selected={activeTab === tab} onClick={() => setActiveTab(tab)}>{tab}</button>)}
-      </div>
+      {showTabs ? (
+        <div className="product-grid__tabs" role="tablist" aria-label="Tipos de produtos">
+          {tabs.map((tab) => <button key={tab} id={`${tabListId}-${tab}`} role="tab" type="button" aria-selected={activeTab === tab} onClick={() => setActiveTab(tab)}>{tab}</button>)}
+        </div>
+      ) : null}
       <div className="product-carousel">
         <button type="button" className="product-carousel__control product-carousel__control--previous" aria-label="Produtos anteriores" onClick={() => scrollCarousel('previous')}>‹</button>
-        <div ref={carouselRef} className="product-grid" role="tabpanel" aria-labelledby={`${tabListId}-${activeTab}`}>
+        <div ref={carouselRef} className="product-grid" role="tabpanel" aria-labelledby={showTabs ? `${tabListId}-${activeTab}` : titleId}>
           {products.map((product) => <ProductCard key={product.id} product={product} onSelect={onSelect} />)}
         </div>
         <button type="button" className="product-carousel__control product-carousel__control--next" aria-label="Próximos produtos" onClick={() => scrollCarousel('next')}>›</button>

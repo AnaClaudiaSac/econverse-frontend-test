@@ -272,22 +272,10 @@
   text-decoration: none;
 }
 
-.brand-chip b {
-  position: relative;
-  z-index: 1;
-}
-
-.brand-chip b::before {
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  left: -4px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: $color-accent;
-  content: '';
-  transform: translateY(-50%);
+.brand-chip img {
+  display: block;
+  width: min(110px, 72%);
+  height: auto;
 }
 
 .newsletter {
@@ -376,9 +364,14 @@
 
 .brand--footer {
   display: inline-block;
+  width: 140px;
   margin-bottom: 27px;
-  color: $color-footer;
-  font-size: 2rem;
+}
+
+.brand--footer img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .footer-brand p {

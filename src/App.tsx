@@ -53,12 +53,17 @@ function App() {
                 <div className="brands__list">
                   {Array.from({ length: 5 }, (_, index) => (
                     <a key={index} href="#produtos" className="brand-chip" aria-label="Marca Econverse">
-                      <span><b>eco</b>nverse</span>
+                      <img src={`${import.meta.env.BASE_URL}econverse-logo.png`} alt="Econverse" />
                     </a>
                   ))}
                 </div>
               </section>
-              <ProductGrid products={products.slice(4, 8)} title="Produtos relacionados" onSelect={setSelectedProduct} />
+              <ProductGrid
+                products={products.slice(4, 8)}
+                title="Produtos relacionados"
+                onSelect={setSelectedProduct}
+                showTabs={false}
+              />
             </div>
           ) : null}
         </div>
@@ -87,7 +92,7 @@ function App() {
       <footer className="site-footer">
         <div className="site-footer__content page-container">
           <section className="footer-brand">
-            <a className="brand brand--footer" href="#inicio"><span>eco</span>nverse</a>
+            <a className="brand--footer" href="#inicio"><img src={`${import.meta.env.BASE_URL}econverse-logo.png`} alt="Econverse" /></a>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <nav className="footer-social" aria-label="Redes sociais">
               <a href="#instagram" aria-label="Instagram">◎</a>
