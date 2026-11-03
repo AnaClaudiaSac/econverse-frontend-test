@@ -20,6 +20,16 @@
   background-color: $color-surface;
 }
 
+.site-header__image-link,
+.site-header__image-link img {
+  display: block;
+  width: 100%;
+}
+
+.site-header__image-link img {
+  height: auto;
+}
+
 .benefits-bar {
   border-bottom: 1px solid #f0f0f0;
 }

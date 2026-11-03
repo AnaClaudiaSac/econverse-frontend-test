@@ -26,40 +26,9 @@ function App() {
   return (
     <>
       <header className="site-header">
-        <div className="benefits-bar">
-          <div className="page-container benefits-bar__content">
-            <p><span aria-hidden="true">♢</span> Compra <strong>100% segura</strong></p>
-            <p><span aria-hidden="true">▣</span> <strong>Frete grátis</strong> acima de R$ 200</p>
-            <p><span aria-hidden="true">▤</span> <strong>Parcele</strong> suas compras</p>
-          </div>
-        </div>
-        <div className="site-header__content page-container">
-          <a className="brand" href="#inicio" aria-label="Econverse, página inicial">
-            <span>eco</span>nverse
-          </a>
-          <form className="search" role="search" onSubmit={(event) => event.preventDefault()}>
-            <label className="sr-only" htmlFor="search-input">Buscar produtos</label>
-            <input id="search-input" type="search" placeholder="O que você está buscando?" />
-            <button type="submit" aria-label="Buscar">⌕</button>
-          </form>
-          <nav className="header-links" aria-label="Atalhos da conta">
-            <a href="#pedidos" aria-label="Meus pedidos">▱</a>
-            <a href="#favoritos" aria-label="Favoritos">♡</a>
-            <a href="#conta" aria-label="Minha conta">◎</a>
-            <a href="#carrinho" aria-label="Carrinho">🛒</a>
-          </nav>
-        </div>
-        <nav className="main-navigation" aria-label="Categorias principais">
-          <div className="page-container main-navigation__content">
-            <a href="#produtos">Todas categorias</a>
-            <a href="#produtos">Supermercado</a>
-            <a href="#produtos">Livros</a>
-            <a href="#produtos">Moda</a>
-            <a href="#produtos">Lançamentos</a>
-            <a className="main-navigation__highlight" href="#produtos">Ofertas do dia</a>
-            <a href="#produtos">♔ Assinatura</a>
-          </div>
-        </nav>
+        <a href="#inicio" className="site-header__image-link" aria-label="Econverse, página inicial">
+          <img src={`${import.meta.env.BASE_URL}header-navigation.png`} alt="Navegação Econverse" />
+        </a>
       </header>
 
       <main id="inicio">
