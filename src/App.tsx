@@ -46,9 +46,8 @@ function App() {
           {!error && products.length === 0 ? <p className="feedback">Carregando produtos...</p> : null}
           {products.length > 0 ? (
             <div id="produtos">
-              <ProductGrid products={products.slice(0, 4)} title="Produtos selecionados" onSelect={setSelectedProduct} />
+              <ProductGrid products={products.slice(0, 4)} title="Produtos relacionados" onSelect={setSelectedProduct} />
               <PartnerBanners />
-              <ProductGrid products={products.slice(4, 8)} title="Produtos selecionados" onSelect={setSelectedProduct} />
               <section className="brands" aria-labelledby="brands-title">
                 <h2 id="brands-title" className="section-title">Navegue por marcas</h2>
                 <div className="brands__list">
@@ -59,7 +58,7 @@ function App() {
                   ))}
                 </div>
               </section>
-              <ProductGrid products={products.slice(8)} title="Produtos selecionados" onSelect={setSelectedProduct} />
+              <ProductGrid products={products.slice(4, 8)} title="Produtos relacionados" onSelect={setSelectedProduct} />
             </div>
           ) : null}
         </div>
