@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react'
+import { CategoryNav } from './components/CategoryNav/CategoryNav'
+import { Header } from './components/Header/Header'
+import { PartnerBanners } from './components/PartnerBanners/PartnerBanners'
 import { ProductGrid } from './components/ProductGrid/ProductGrid'
 import { ProductModal } from './components/ProductModal/ProductModal'
 import { getProducts } from './services/products'
@@ -25,11 +28,7 @@ function App() {
 
   return (
     <>
-      <header className="site-header">
-        <a href="#inicio" className="site-header__image-link" aria-label="Econverse, página inicial">
-          <img src={`${import.meta.env.BASE_URL}header-navigation.png`} alt="Navegação Econverse" />
-        </a>
-      </header>
+      <Header />
 
       <main id="inicio">
         <section className="hero" aria-label="Ofertas Black Friday">
@@ -40,14 +39,7 @@ function App() {
           </div>
         </section>
 
-        <nav className="categories page-container" aria-label="Categorias de produtos">
-          <a href="#produtos" aria-label="Ver produtos por categoria">
-            <img
-              src={`${import.meta.env.BASE_URL}category-navigation.png`}
-              alt="Tecnologia, Supermercado, Bebidas, Ferramentas, Saúde, Esportes e Fitness e Moda"
-            />
-          </a>
-        </nav>
+        <CategoryNav />
 
         <div className="page-container">
           {error ? <p className="feedback feedback--error">{error}</p> : null}
@@ -55,14 +47,7 @@ function App() {
           {products.length > 0 ? (
             <div id="produtos">
               <ProductGrid products={products.slice(0, 4)} title="Produtos selecionados" onSelect={setSelectedProduct} />
-              <section className="partner-banners" aria-label="Parceiros Econverse">
-                <a href="#produtos" aria-label="Conheça os parceiros da Econverse">
-                  <img
-                    src={`${import.meta.env.BASE_URL}partner-banners.png`}
-                    alt="Parceiros: confira nossas ofertas especiais"
-                  />
-                </a>
-              </section>
+              <PartnerBanners />
               <ProductGrid products={products.slice(4, 8)} title="Produtos selecionados" onSelect={setSelectedProduct} />
               <section className="brands" aria-labelledby="brands-title">
                 <h2 id="brands-title" className="section-title">Navegue por marcas</h2>

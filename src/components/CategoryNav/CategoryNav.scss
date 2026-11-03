@@ -1,0 +1,5 @@
+@use '../../styles/variables' as *;
+.category-nav { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 18px; padding-top: 30px; }
+.category-nav__item { display: flex; min-height: 135px; flex-direction: column; align-items: center; justify-content: center; gap: 14px; border-radius: 14px; background: #f6f6f6; color: #3e3e3e; font-size: .8rem; font-weight: 700; text-align: center; text-decoration: none; } .category-nav__item span { font-size: 2.8rem; line-height: 1; } .category-nav__item--active { background: #fff; color: $color-primary; box-shadow: 0 4px 16px rgb(0 0 0/.12); } .category-nav__item--active span { color: $color-primary; }
+@media (max-width: 900px) { .category-nav { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 500px) { .category-nav { grid-template-columns: repeat(2, 1fr); gap: 12px; } .category-nav__item { min-height: 110px; } }
