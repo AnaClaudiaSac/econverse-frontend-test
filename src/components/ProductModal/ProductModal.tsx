@@ -1,14 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Product } from '../../types/product'
+import { formatPrice } from '../../utils/format'
 import './ProductModal.scss'
 
 interface ProductModalProps {
   product: Product | null
   onClose: () => void
 }
-
-const formatPrice = (price: number) =>
-  price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
 
 export function ProductModal({ product, onClose }: ProductModalProps) {
   const [quantity, setQuantity] = useState(1)
@@ -19,6 +17,8 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
       return undefined
     }
 
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
     closeButtonRef.current?.focus()
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -28,7 +28,10 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
     }
 
     window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', handleKeyDown)
+    }
   }, [onClose, product])
 
   if (!product) {

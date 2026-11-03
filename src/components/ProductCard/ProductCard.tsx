@@ -1,13 +1,11 @@
 import type { Product } from '../../types/product'
+import { formatPrice } from '../../utils/format'
 import './ProductCard.scss'
 
 interface ProductCardProps {
   product: Product
   onSelect: (product: Product) => void
 }
-
-const formatPrice = (price: number) =>
-  price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
 
 export function ProductCard({ product, onSelect }: ProductCardProps) {
   const previousPrice = product.price * 1.07

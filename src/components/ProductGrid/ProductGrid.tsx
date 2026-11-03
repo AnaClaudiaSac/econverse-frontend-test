@@ -1,4 +1,4 @@
-import { useId } from 'react'
+import { useId, useRef, useState } from 'react'
 import { ProductCard } from '../ProductCard/ProductCard'
 import type { Product } from '../../types/product'
 import './ProductGrid.scss'
@@ -9,8 +9,19 @@ interface ProductGridProps {
   onSelect: (product: Product) => void
 }
 
+const tabs = ['Celular', 'Acessórios', 'Tablets', 'Notebooks', 'TVs', 'Ver todos']
+
 export function ProductGrid({ products, title, onSelect }: ProductGridProps) {
   const titleId = useId()
+  const tabListId = useId()
+  const [activeTab, setActiveTab] = useState(tabs[0])
+  const carouselRef = useRef<HTMLDivElement>(null)
+
+  const scrollCarousel = (direction: 'next' | 'previous') => {
+    const carousel = carouselRef.current
+    if (!carousel) return
+    carousel.scrollBy({ left: direction === 'next' ? carousel.clientWidth : -carousel.clientWidth, behavior: 'smooth' })
+  }
 
   return (
     <section className="product-grid-section" aria-labelledby={titleId}>
@@ -22,10 +33,15 @@ export function ProductGrid({ products, title, onSelect }: ProductGridProps) {
         </div>
         <span aria-hidden="true" />
       </div>
-      <div className="product-grid">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} onSelect={onSelect} />
-        ))}
+      <div className="product-grid__tabs" role="tablist" aria-label="Tipos de produtos">
+        {tabs.map((tab) => <button key={tab} id={`${tabListId}-${tab}`} role="tab" type="button" aria-selected={activeTab === tab} onClick={() => setActiveTab(tab)}>{tab}</button>)}
+      </div>
+      <div className="product-carousel">
+        <button type="button" className="product-carousel__control product-carousel__control--previous" aria-label="Produtos anteriores" onClick={() => scrollCarousel('previous')}>‹</button>
+        <div ref={carouselRef} className="product-grid" role="tabpanel" aria-labelledby={`${tabListId}-${activeTab}`}>
+          {products.map((product) => <ProductCard key={product.id} product={product} onSelect={onSelect} />)}
+        </div>
+        <button type="button" className="product-carousel__control product-carousel__control--next" aria-label="Próximos produtos" onClick={() => scrollCarousel('next')}>›</button>
       </div>
     </section>
   )
