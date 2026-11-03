@@ -1,6 +1,22 @@
 @use '../../styles/variables' as *;
-.partner-banners { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; padding: 28px 0; }
-.partner-banners__item { min-height: 280px; padding: 52px 42px; border-radius: 25px; background-image: linear-gradient(90deg, rgb(0 0 0/.68), rgb(0 0 0/.18)), url('/partner-banners.png'); background-position: center, left center; background-size: cover, 200% 100%; background-repeat: no-repeat; color: #fff; }
-.partner-banners__item:nth-child(2) { background-position: center, right center; }
-.partner-banners__item h2 { margin: 0 0 22px; font-size: 2.5rem; line-height: 1; }.partner-banners__item p { max-width: 285px; min-height: 60px; margin: 0 0 28px; font-size: 1.1rem; line-height: 1.4; }.partner-banners__item a { display:inline-grid; width: 225px; min-height: 76px; place-items:center; padding: 0; border-radius:8px; background:#ffcb00; color:$color-footer; font-size:1.05rem; font-weight:800; letter-spacing:.08em; text-decoration:none; text-transform:uppercase; }
-@media(max-width:760px){.partner-banners{grid-template-columns:1fr}.partner-banners__item{min-height:230px;padding:35px 28px;background-size:cover, 200% 100%}.partner-banners__item h2{font-size:2rem}}
+
+.partner-banners {
+  padding: 28px 0;
+}
+
+.partner-banners__link {
+  display: block;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.partner-banners__link:focus-visible {
+  outline: 3px solid $color-accent;
+  outline-offset: 4px;
+}
+
+.partner-banners__link img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
