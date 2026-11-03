@@ -191,9 +191,9 @@
 @media (max-width: 800px) {
   .header__main {
     grid-template-columns: 1fr auto;
-    gap: 15px;
-    min-height: 80px;
-    padding-bottom: 16px;
+    gap: 14px 16px;
+    min-height: 0;
+    padding: 14px 0 16px;
   }
 
   .header__search {
@@ -206,7 +206,9 @@
   }
 
   .header__menu-button {
-    display: block;
+    display: grid;
+    place-items: center;
+    line-height: 1;
     min-width: 44px;
     min-height: 44px;
     border: 0;
