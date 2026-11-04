@@ -16,6 +16,8 @@ concurrency:
 
 jobs:
   deploy:
+    # Publica só no repositório do site; no fork (entrega do teste) o deploy é ignorado.
+    if: github.repository == 'AnaClaudiaSac/econverse-frontend-test'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
