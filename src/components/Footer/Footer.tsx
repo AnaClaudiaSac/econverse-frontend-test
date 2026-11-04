@@ -47,9 +47,9 @@ export function Footer() {
           </a>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <nav className="footer-social" aria-label="Redes sociais">
-            <a href="#instagram" aria-label="Instagram"><InstagramIcon /></a>
-            <a href="#facebook" aria-label="Facebook"><FacebookIcon /></a>
-            <a href="#linkedin" aria-label="LinkedIn"><LinkedinIcon /></a>
+            <a href="https://instagram.com/econverse.ag" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Econverse (abre em nova aba)"><InstagramIcon /></a>
+            <a href="https://www.facebook.com/agenciaeconverse" target="_blank" rel="noopener noreferrer" aria-label="Facebook da Econverse (abre em nova aba)"><FacebookIcon /></a>
+            <a href="https://linkedin.com/company/econverse" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da Econverse (abre em nova aba)"><LinkedinIcon /></a>
           </nav>
         </section>
         {columns.map(({ id, title, links }) => (
