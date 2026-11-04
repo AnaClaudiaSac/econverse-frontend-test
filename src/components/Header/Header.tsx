@@ -21,10 +21,10 @@ export function Header() {
           <button type="submit" aria-label="Buscar produtos"><svg className="header__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5" /></svg></button>
         </form>
         <div className="header__actions" aria-label="Atalhos da conta">
-          <a href="#pedidos" aria-label="Meus pedidos"><svg className="header__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="1.5" /><path d="M3.5 10h17M12 3.5V10M15.5 15h-6m2-2-2 2 2 2" /></svg></a>
-          <a href="#favoritos" aria-label="Favoritos"><svg className="header__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z" /></svg></a>
-          <a href="#conta" aria-label="Minha conta"><svg className="header__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="10" r="3.2" /><path d="M6.3 18.6a6.5 6.5 0 0 1 11.4 0" /></svg></a>
-          <a href="#carrinho" aria-label="Carrinho"><svg className="header__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 4h2.6l2.4 11h11l2-8H6" /><circle cx="9" cy="19" r="1.4" /><circle cx="17" cy="19" r="1.4" /></svg></a>
+          <a href="#pedidos" aria-label="Meus pedidos"><svg className="header__icon" viewBox="2 2 20 20" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="1.5" /><path d="M3.5 10h17M12 3.5V10M15.5 15h-6m2-2-2 2 2 2" /></svg></a>
+          <a href="#favoritos" aria-label="Favoritos"><svg className="header__icon" viewBox="2 2 20 20" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z" /></svg></a>
+          <a href="#conta" aria-label="Minha conta"><svg className="header__icon" viewBox="2 2 20 20" aria-hidden="true"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="10" r="3.2" /><path d="M6.3 18.6a6.5 6.5 0 0 1 11.4 0" /></svg></a>
+          <a href="#carrinho" aria-label="Carrinho"><svg className="header__icon" viewBox="2 2 20 20" aria-hidden="true"><path d="M2.5 4h2.6l2.4 11h11l2-8H6" /><circle cx="9" cy="19" r="1.4" /><circle cx="17" cy="19" r="1.4" /></svg></a>
         </div>
         <button className="header__menu-button" type="button" aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>☰</button>
       </div>
