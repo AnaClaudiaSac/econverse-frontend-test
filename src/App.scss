@@ -176,49 +176,47 @@
   color: $color-surface;
 }
 
+// Figma: título no topo 78px (48px SemiBold, linha 50px), "50% Off" 32px, botão 206 × 50
 .hero__content {
   position: relative;
   z-index: 1;
-  padding: 80px 0 0;
+  padding: 78px 0 0;
+}
+
+.hero h1 {
+  max-width: 822px;
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 600;
+  line-height: 50px;
 }
 
 .hero p {
-  margin: 0 0 40px;
+  margin: 0 0 41px;
   color: $color-surface;
   font-size: clamp(1.4rem, 2.3vw, 2rem);
-  font-weight: 500;
+  font-weight: 400;
+  line-height: 48px;
 }
 
 .hero p strong {
   color: $color-accent;
-}
-
-.hero h1 {
-  max-width: 640px;
-  margin: 0 0 10px;
-  font-size: clamp(2rem, 3.4vw, 3rem);
-  font-weight: 600;
-  line-height: 1.05;
-}
-
-.hero a,
-.offer-banner a {
-  display: inline-block;
-  padding: 11px 20px;
-  background-color: $color-accent;
-  color: $color-text;
-  font-size: 0.8rem;
-  font-weight: 800;
-  text-decoration: none;
+  font-weight: 700;
 }
 
 .hero a {
-  min-width: 205px;
-  padding: 14px 32px;
-  border-radius: 4px;
-  font-size: 1.1rem;
+  display: inline-flex;
+  width: 206px;
+  height: 50px;
+  margin-left: 7px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: $color-accent;
+  color: $color-footer;
+  font-size: 16px;
   font-weight: 600;
-  text-align: center;
+  text-decoration: none;
 }
 
 .categories {
@@ -244,10 +242,6 @@
   color: #b42318;
 }
 
-.partner-banners {
-  padding: 24px 0;
-}
-
 .partner-banners a,
 .partner-banners img {
   display: block;
@@ -256,60 +250,79 @@
 
 .partner-banners img {
   height: auto;
-  border-radius: 26px;
 }
 
+// Newsletter (Figma: 162px de altura, fundo #271C47)
 .newsletter {
-  margin-top: 54px;
+  margin-top: 90px;
   background: $color-footer;
   color: $color-surface;
 }
 
 .newsletter__content {
   display: grid;
-  grid-template-columns: minmax(440px, 1.2fr) minmax(680px, 1.5fr);
-  align-items: center;
-  gap: 70px;
-  min-height: 194px;
+  grid-template-columns: minmax(0, 515px) 639px;
+  justify-content: space-between;
+  align-items: start;
+  min-height: 162px;
+  padding-top: 40px;
+}
+
+.newsletter__content > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .newsletter h2 {
-  margin: 0 0 10px;
-  font-size: clamp(1.6rem, 3vw, 2rem);
-  line-height: 1.1;
+  margin: 0;
+  font-family: 'Outfit', 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
 .newsletter p {
-  max-width: 680px;
+  max-width: 515px;
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.35;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
 }
 
 .newsletter__form {
   display: grid;
-  grid-template-columns: minmax(190px, 1fr) minmax(230px, 1.2fr) 190px;
-  gap: 12px;
+  grid-template-columns: 233px 233px 157px;
+  gap: 8px;
+  margin-top: 5.5px;
 }
 
 .newsletter__form input {
   min-width: 0;
-  padding: 16px 22px;
-  border: 1px solid #dedede;
-  border-radius: 10px;
+  height: 42px;
+  padding: 0 24px;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
   color: $color-text;
-  font-size: 1rem;
+  font: inherit;
+  font-size: 14px;
+}
+
+.newsletter__form input::placeholder {
+  color: #676767;
 }
 
 .newsletter__form button {
+  height: 42px;
   border: 0;
-  border-radius: 10px;
+  border-radius: 8px;
   background: $color-accent;
-  color: #151515;
+  color: #161615;
   cursor: pointer;
-  font-size: 0.95rem;
-  font-weight: 800;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -317,64 +330,60 @@
   grid-column: 1 / -1;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.95rem;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .newsletter__terms input {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   margin: 0;
   accent-color: $color-accent;
 }
 
+// Footer (Figma: 282px, fundo #F4F4F4, padding 42 × 80, colunas a 90px)
 .site-footer {
-  background: #f6f6f6;
+  background: #f4f4f4;
 }
 
 .site-footer__content {
-  display: grid;
-  grid-template-columns: minmax(280px, 1.8fr) repeat(3, 1fr);
-  gap: 72px;
-  padding: 58px 0;
-}
-
-.site-footer__bottom {
-  padding: 16px;
-  border-top: 1px solid #dedede;
-  background: $color-surface;
-  color: #6d6d6d;
-  font-size: 0.75rem;
-  text-align: center;
-}
-
-.site-footer__bottom p {
-  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  min-height: 282px;
+  padding: 42px 0;
 }
 
 .footer-brand {
-  padding-right: 72px;
-  border-right: 1px solid #cecece;
+  display: flex;
+  flex: 0 0 354px;
+  flex-direction: column;
+  align-self: stretch;
+  justify-content: center;
+  padding-right: 90px;
+  box-sizing: content-box;
+  border-right: 1px solid rgb(40 40 40 / 18%);
 }
 
 .brand--footer {
   display: inline-block;
-  width: 140px;
-  margin-bottom: 27px;
+  width: 164px;
+  margin-bottom: 18px;
 }
 
 .brand--footer img {
   display: block;
-  width: 100%;
-  height: auto;
+  width: 164px;
+  height: 48px;
 }
 
 .footer-brand p {
-  max-width: 370px;
-  margin: 0 0 34px;
-  color: #515151;
-  font-size: 1rem;
-  line-height: 1.45;
+  max-width: 354px;
+  margin: 0 0 27px;
+  color: $color-text;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 .footer-social {
@@ -396,18 +405,38 @@
   height: 24px;
 }
 
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: rgb(34 34 34 / 71%);
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.footer-links + .footer-links {
+  margin-left: 10px;
+}
+
 .footer-links h2 {
-  margin: 0 0 25px;
-  color: #575757;
-  font-size: 1.05rem;
+  margin: 0 0 4px;
+  color: rgb(34 34 34 / 71%);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
 }
 
 .footer-links a {
   display: block;
-  margin-bottom: 18px;
-  color: #5f5f5f;
-  font-size: 0.95rem;
+  color: rgb(34 34 34 / 71%);
+  font-family: 'Work Sans', 'Poppins', sans-serif;
+  font-size: 14px;
+  line-height: 16px;
   text-decoration: none;
+}
+
+.footer-links:last-child a {
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer-links a:hover,
@@ -415,11 +444,40 @@
   color: $color-primary;
 }
 
+.site-footer__bottom {
+  display: grid;
+  min-height: 47px;
+  place-items: center;
+  background: $color-surface;
+  color: $color-text;
+  font-size: 13px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.site-footer__bottom p {
+  margin: 0;
+}
+
 @media (max-width: 1250px) {
   .newsletter__content {
     grid-template-columns: 1fr;
     gap: 24px;
     padding: 32px 0;
+  }
+
+  .site-footer__content {
+    gap: 40px;
+  }
+
+  .footer-brand {
+    flex: 0 1 300px;
+    min-width: 0;
+    padding-right: 40px;
+  }
+
+  .footer-links + .footer-links {
+    margin-left: 0;
   }
 }
 
@@ -493,23 +551,29 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .newsletter__form button {
-    min-height: 50px;
-  }
-
   .newsletter__terms {
     grid-column: 1 / -1;
   }
 
   .site-footer__content {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 34px;
   }
 
   .footer-brand {
+    flex-basis: auto;
     padding-right: 0;
     padding-bottom: 30px;
     border-right: 0;
-    border-bottom: 1px solid #cecece;
+    border-bottom: 1px solid rgb(40 40 40 / 18%);
+  }
+
+  .footer-links + .footer-links {
+    margin-left: 0;
+  }
+
+  .newsletter h2 {
+    font-size: 26px;
   }
 }

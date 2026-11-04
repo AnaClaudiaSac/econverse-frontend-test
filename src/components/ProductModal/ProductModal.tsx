@@ -54,7 +54,9 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
           aria-label="Fechar detalhes do produto"
           onClick={onClose}
         >
-          ×
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M1.5 1.5L14.5 14.5M14.5 1.5L1.5 14.5" stroke="#707070" strokeWidth="2" />
+          </svg>
         </button>
         <div className="product-modal__image-wrapper">
           <img className="product-modal__image" src={product.imageUrl} alt={product.name} />
@@ -74,7 +76,9 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
                 disabled={quantity === 1}
                 onClick={() => setQuantity((currentQuantity) => currentQuantity - 1)}
               >
-                −
+                <svg width="20" height="20" viewBox="0 0 20.3077 19.6364" fill="none" aria-hidden="true">
+                  <path d="M4.23047 9.81818H16.0766" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="round" />
+                </svg>
               </button>
               <span>{String(quantity).padStart(2, '0')}</span>
               <button
@@ -82,7 +86,10 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
                 aria-label="Aumentar quantidade"
                 onClick={() => setQuantity((currentQuantity) => currentQuantity + 1)}
               >
-                +
+                <svg width="20" height="20" viewBox="0 0 20.3077 19.6364" fill="none" aria-hidden="true">
+                  <path d="M10.1543 4.09091V15.5455" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="round" />
+                  <path d="M4.23047 9.81818H16.0766" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="round" />
+                </svg>
               </button>
             </div>
             <button type="button" className="product-modal__action">Comprar</button>

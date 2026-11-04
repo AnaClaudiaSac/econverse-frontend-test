@@ -5,7 +5,7 @@
   // Figma: 7 cards de 128px com 42px entre eles (1160px no total)
   grid-template-columns: repeat(7, minmax(0, 128px));
   justify-content: center;
-  gap: clamp(12px, 2.9vw, 42px);
+  gap: clamp(12px, 3vw, 42px);
   padding-top: 39px;
 }
 
@@ -14,10 +14,10 @@
   flex-direction: column;
   align-items: center;
   min-width: 0;
-  color: #3e3e3e;
-  font-size: .875rem;
-  font-weight: 400;
-  line-height: 1.2;
+  color: #4e4e4e;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
   text-align: center;
   text-decoration: none;
 }
@@ -29,8 +29,9 @@
   aspect-ratio: 1;
   place-items: center;
   overflow: hidden;
-  border-radius: 14px;
-  background: #f6f6f6;
+  border-radius: 10px;
+  background: #f4f4f4;
+  box-shadow: 0 4px 11px rgb(0 0 0 / 13%);
 }
 
 .category-nav__icon-box img {
@@ -40,20 +41,22 @@
 }
 
 .category-nav__item--active {
-  color: $color-primary;
+  color: #3019b2;
+  font-weight: 600;
 }
 
 .category-nav__item--active .category-nav__icon-box {
   background: $color-surface;
-  box-shadow: 0 5px 16px rgb(0 0 0 / 10%);
+  box-shadow: 0 2px 9px rgb(0 0 0 / 22%);
 }
 
 .category-nav__label {
   display: flex;
-  min-height: 2.4em;
+  min-height: 21px;
   align-items: flex-start;
   justify-content: center;
-  margin-top: 18px;
+  margin-top: 22px;
+  white-space: nowrap;
 }
 
 @media (max-width: 900px) {
