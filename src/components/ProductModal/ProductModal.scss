@@ -39,13 +39,15 @@
   cursor: pointer;
 }
 
+// a imagem fica presa dentro da área (247 × 192 no desktop) e nunca invade o texto
 .product-modal__image-wrapper {
-  display: grid;
+  position: relative;
   height: 192px;
-  place-items: center;
 }
 
 .product-modal__image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;

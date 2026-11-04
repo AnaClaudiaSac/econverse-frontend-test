@@ -66,11 +66,17 @@
 }
 
 @media (max-width: 500px) {
-  .category-nav {
+  // celular: fileira que rola na horizontal, começando pelo 1º card,
+  // com folga nas laterais para a sombra dos cards não ser cortada
+  // (.page-container junto para vencer a largura/margem padrão do container)
+  .category-nav.page-container {
     display: flex;
+    width: 100%;
+    justify-content: flex-start;
     gap: 12px;
-    margin-bottom: -16px;
-    padding-bottom: 16px;
+    margin: 0 0 -16px;
+    padding: 39px 16px 20px;
+    scroll-padding: 0 16px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
@@ -88,5 +94,10 @@
   .category-nav__icon-box img {
     width: 48px;
     height: 48px;
+  }
+
+  .category-nav__label {
+    margin-top: 12px;
+    font-size: 12px;
   }
 }

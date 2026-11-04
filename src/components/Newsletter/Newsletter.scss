@@ -46,7 +46,7 @@
   margin-top: 5.5px;
 }
 
-.newsletter__form input {
+.newsletter__form input:not([type='checkbox']) {
   min-width: 0;
   height: 42px;
   padding: 0 24px;
@@ -57,7 +57,7 @@
   font-size: 14px;
 }
 
-.newsletter__form input::placeholder {
+.newsletter__form input:not([type='checkbox'])::placeholder {
   color: #676767;
 }
 
@@ -76,17 +76,22 @@
 
 .newsletter__terms {
   grid-column: 1 / -1;
-  display: flex;
+  display: inline-flex;
+  width: fit-content;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  cursor: pointer;
   font-size: 14px;
   line-height: 1.5;
 }
 
+// checkbox sem herdar o espaçamento dos campos de texto (no iPhone isso afastava o texto)
 .newsletter__terms input {
+  flex: 0 0 15px;
   width: 15px;
   height: 15px;
   margin: 0;
+  padding: 0;
   accent-color: $color-accent;
 }
 
@@ -105,8 +110,16 @@
 }
 
 @media (max-width: 760px) {
+  // celular: um campo embaixo do outro, ocupando toda a largura
   .newsletter__form {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .newsletter__form input:not([type='checkbox']),
+  .newsletter__form button {
+    width: 100%;
+    height: 48px;
   }
 
   .newsletter__terms {
