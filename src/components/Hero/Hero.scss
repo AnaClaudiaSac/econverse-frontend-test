@@ -1,0 +1,75 @@
+@use '../../styles/variables' as *;
+
+.hero {
+  position: relative;
+  height: 390px;
+  overflow: hidden;
+  background-image:
+    linear-gradient(90deg, rgb(0 0 0 / 77%) 0%, rgb(0 0 0 / 43%) 33%, transparent 66%),
+    url('/black-friday-banner.png');
+  background-position: center;
+  background-size: cover;
+  color: $color-surface;
+}
+
+// Figma: título no topo 78px (48px SemiBold, linha 50px), "50% Off" 32px, botão 206 × 50
+.hero__content {
+  position: relative;
+  z-index: 1;
+  padding: 78px 0 0;
+}
+
+.hero h1 {
+  max-width: 822px;
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 600;
+  line-height: 50px;
+}
+
+.hero p {
+  margin: 0 0 41px;
+  color: $color-surface;
+  font-size: clamp(1.4rem, 2.3vw, 2rem);
+  font-weight: 400;
+  line-height: 48px;
+}
+
+.hero p strong {
+  color: $color-accent;
+  font-weight: 700;
+}
+
+.hero a {
+  display: inline-flex;
+  width: 206px;
+  height: 50px;
+  margin-left: 7px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: $color-accent;
+  color: $color-footer;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    height: auto;
+  }
+
+  .hero__content {
+    padding: 48px 0 40px;
+  }
+
+  .hero h1 {
+    line-height: 1.15;
+  }
+
+  .hero p {
+    margin-bottom: 28px;
+    line-height: 1.3;
+  }
+}

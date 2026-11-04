@@ -1,0 +1,119 @@
+@use '../../styles/variables' as *;
+
+// Newsletter (Figma: 162px de altura, fundo #271C47)
+.newsletter {
+  margin-top: 90px;
+  background: $color-footer;
+  color: $color-surface;
+}
+
+.newsletter__content {
+  display: grid;
+  grid-template-columns: minmax(0, 515px) 639px;
+  justify-content: space-between;
+  align-items: start;
+  min-height: 162px;
+  padding-top: 40px;
+}
+
+.newsletter__content > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.newsletter h2 {
+  margin: 0;
+  font-family: 'Outfit', 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.newsletter p {
+  max-width: 515px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+}
+
+.newsletter__form {
+  display: grid;
+  grid-template-columns: 233px 233px 157px;
+  gap: 8px;
+  margin-top: 5.5px;
+}
+
+.newsletter__form input {
+  min-width: 0;
+  height: 42px;
+  padding: 0 24px;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  color: $color-text;
+  font: inherit;
+  font-size: 14px;
+}
+
+.newsletter__form input::placeholder {
+  color: #676767;
+}
+
+.newsletter__form button {
+  height: 42px;
+  border: 0;
+  border-radius: 8px;
+  background: $color-accent;
+  color: #161615;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.newsletter__terms {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.newsletter__terms input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: $color-accent;
+}
+
+@media (max-width: 1250px) {
+  .newsletter__content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .newsletter h2 {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 760px) {
+  .newsletter__form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .newsletter__terms {
+    grid-column: 1 / -1;
+  }
+
+  .newsletter h2 {
+    font-size: 26px;
+  }
+}
