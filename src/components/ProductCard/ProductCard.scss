@@ -1,87 +1,98 @@
 @use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
 
+// Medidas do Figma (card 304 × 500): topo 32, imagem 228, título 46 (2 linhas),
+// preço antigo 24, preço 30, parcelas 18, frete 18, botão 44, base 16.
 .product-card {
   display: flex;
   min-width: 0;
-  min-height: 470px;
+  height: 500px;
   flex-direction: column;
-  padding: 18px;
+  padding: 32px 13px 16px 12px;
   border: 0;
-  border-radius: 4px;
+  border-radius: 10px;
   background-color: $color-surface;
-  box-shadow: 0 4px 14px rgb(0 0 0 / 8%);
+  box-shadow: 0 3px 19px rgb(0 0 0 / 22%);
 }
 
 .product-card__content {
   display: flex;
   flex: 1;
   width: 100%;
+  min-height: 0;
   flex-direction: column;
   padding: 0;
   border: 0;
   background: transparent;
-  color: inherit;
+  color: #3f3f40;
   cursor: pointer;
+  font-family: inherit;
   text-align: left;
 }
 
 .product-card__image {
   width: 100%;
-  height: 218px;
-  margin-bottom: 19px;
+  height: 228px;
+  margin-bottom: 9px;
   object-fit: contain;
 }
 
 .product-card__title {
   display: -webkit-box;
-  min-height: 43px;
-  margin: 0 0 18px;
+  height: 46px;
+  margin: 0 0 12px;
   overflow: hidden;
-  color: #454545;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.35;
+  color: #3f3f40;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 23px;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
 
 .product-card__previous-price {
-  margin-bottom: 7px;
-  color: #8f8f8f;
-  font-size: 0.9rem;
+  margin-bottom: 2px;
+  color: #808080;
+  font-size: 16px;
+  line-height: 24px;
   text-decoration: line-through;
 }
 
 .product-card__price {
   display: block;
-  margin-bottom: 7px;
-  color: #3b3b3b;
-  font-size: 1.45rem;
+  margin-bottom: 2px;
+  color: #3f3f40;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
 }
 
 .product-card__installments {
-  margin-bottom: 14px;
-  color: #424242;
-  font-size: 0.86rem;
+  margin-bottom: 7px;
+  color: #3f3f40;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 .product-card__shipping {
-  color: $color-primary;
-  font-size: 0.95rem;
+  color: #3442b5;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 .product-card__action {
   width: 100%;
-  margin-top: 20px;
-  padding: 16px 12px;
+  height: 44px;
+  margin-top: 12px;
+  padding: 0 12px;
   border: 0;
   border-radius: 4px;
-  background-color: #3a49bb;
+  background-color: #3442b5;
   color: $color-surface;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: 800;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -92,24 +103,10 @@
 
 @media (max-width: 760px) {
   .product-card {
-    min-height: 420px;
-    padding: 12px;
+    height: 460px;
   }
 
   .product-card__image {
-    height: 160px;
-  }
-
-  .product-card__title {
-    font-size: 0.85rem;
-  }
-
-  .product-card__price {
-    font-size: 1.1rem;
-  }
-
-  .product-card__installments,
-  .product-card__shipping {
-    font-size: 0.74rem;
+    height: 188px;
   }
 }

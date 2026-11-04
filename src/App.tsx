@@ -7,6 +7,7 @@ import { ProductGrid } from './components/ProductGrid/ProductGrid'
 import { ProductModal } from './components/ProductModal/ProductModal'
 import { getProducts } from './services/products'
 import type { Product } from './types/product'
+import { FacebookIcon, InstagramIcon, LinkedinIcon } from './components/Icons/Icons'
 import './App.scss'
 
 
@@ -94,9 +95,9 @@ function App() {
             <a className="brand--footer" href="#inicio"><img src={`${import.meta.env.BASE_URL}econverse-logo.svg`} alt="Econverse" /></a>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <nav className="footer-social" aria-label="Redes sociais">
-              <a href="#instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" /></svg></a>
-              <a href="#facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h3l.5-3H14V8.5c0-.9.3-1.5 1.7-1.5H18V4.3c-.4-.1-1.3-.3-2.5-.3-2.5 0-4.2 1.5-4.2 4.3V10H8.5v3h2.8v8" /></svg></a>
-              <a href="#linkedin" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9v9M6 6v.1M10 18v-5c0-2 1-4 3.5-4S17 11 17 13v5M10 12v6" /></svg></a>
+              <a href="#instagram" aria-label="Instagram"><InstagramIcon /></a>
+              <a href="#facebook" aria-label="Facebook"><FacebookIcon /></a>
+              <a href="#linkedin" aria-label="LinkedIn"><LinkedinIcon /></a>
             </nav>
           </section>
           <section className="footer-links" aria-labelledby="institutional-title">

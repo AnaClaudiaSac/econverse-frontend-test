@@ -1,4 +1,5 @@
 import { useId, useRef, useState } from 'react'
+import { CarouselArrowIcon } from '../Icons/Icons'
 import { ProductCard } from '../ProductCard/ProductCard'
 import type { Product } from '../../types/product'
 import './ProductGrid.scss'
@@ -41,11 +42,11 @@ export function ProductGrid({ products, title, onSelect, showTabs = true, showVi
         </div>
       ) : null}
       <div className="product-carousel">
-        <button type="button" className="product-carousel__control product-carousel__control--previous" aria-label="Produtos anteriores" onClick={() => scrollCarousel('previous')}>‹</button>
+        <button type="button" className="product-carousel__control product-carousel__control--previous" aria-label="Produtos anteriores" onClick={() => scrollCarousel('previous')}><CarouselArrowIcon /></button>
         <div ref={carouselRef} className="product-grid" role="tabpanel" aria-labelledby={showTabs ? `${tabListId}-${activeTab}` : titleId}>
           {products.map((product) => <ProductCard key={product.id} product={product} onSelect={onSelect} />)}
         </div>
-        <button type="button" className="product-carousel__control product-carousel__control--next" aria-label="Próximos produtos" onClick={() => scrollCarousel('next')}>›</button>
+        <button type="button" className="product-carousel__control product-carousel__control--next" aria-label="Próximos produtos" onClick={() => scrollCarousel('next')}><CarouselArrowIcon /></button>
       </div>
     </section>
   )

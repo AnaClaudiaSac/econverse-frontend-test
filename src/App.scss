@@ -379,26 +379,21 @@
 
 .footer-social {
   display: flex;
-  gap: 38px;
+  gap: 26px;
 }
 
 .footer-social a {
   display: grid;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   place-items: center;
-  color: #4e4e4e;
+  color: #4a4a4a;
   text-decoration: none;
 }
 
 .footer-social svg {
-  width: 100%;
-  height: 100%;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.8;
+  width: 24px;
+  height: 24px;
 }
 
 .footer-links h2 {

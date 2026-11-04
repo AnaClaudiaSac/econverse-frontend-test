@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { CarouselArrowIcon } from '../Icons/Icons'
 import './BrandCarousel.scss'
 
 const brandCount = 7
@@ -26,7 +27,7 @@ export function BrandCarousel() {
           aria-label="Marcas anteriores"
           onClick={() => scrollCarousel('previous')}
         >
-          ‹
+          <CarouselArrowIcon />
         </button>
         <div ref={carouselRef} className="brands__list">
           {Array.from({ length: brandCount }, (_, index) => (
@@ -41,7 +42,7 @@ export function BrandCarousel() {
           aria-label="Próximas marcas"
           onClick={() => scrollCarousel('next')}
         >
-          ›
+          <CarouselArrowIcon />
         </button>
       </div>
     </section>
