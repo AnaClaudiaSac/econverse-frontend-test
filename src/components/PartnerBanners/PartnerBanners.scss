@@ -1,22 +1,101 @@
+@use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
 
+// Figma: 2 banners de 634 × 350, 13px entre eles, raio 20, degradê preto na base.
 .partner-banners {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
   padding: 90px 0 0;
 }
 
-.partner-banners__link {
-  display: block;
+.partner-banner {
+  position: relative;
+  height: 350px;
   overflow: hidden;
-  border-radius: 25px;
+  border-radius: 20px;
+  color: $color-surface;
 }
 
-.partner-banners__link:focus-visible {
-  outline: 3px solid $color-accent;
-  outline-offset: 4px;
+.partner-banner::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 261px;
+  background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, #000 85.039%);
+  content: '';
+  opacity: .8;
 }
 
-.partner-banners__link img {
-  display: block;
+.partner-banner__image {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+.partner-banner__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 114px 44px 0;
+}
+
+.partner-banner__title {
+  margin: 0 0 8px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 60px;
+}
+
+.partner-banner__text {
+  max-width: 200px;
+  margin: 0 0 32px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.partner-banner__button {
+  display: inline-flex;
+  width: 145px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: $color-accent;
+  color: $color-footer;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.28px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.partner-banner__button:focus-visible {
+  @include focus-visible;
+}
+
+@media (max-width: 760px) {
+  .partner-banners {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-top: 56px;
+  }
+
+  .partner-banner {
+    height: 300px;
+  }
+
+  .partner-banner__content {
+    padding: 80px 28px 0;
+  }
+
+  .partner-banner__title {
+    font-size: 32px;
+    line-height: 48px;
+  }
 }
