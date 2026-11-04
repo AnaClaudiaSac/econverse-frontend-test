@@ -149,7 +149,9 @@
   gap: clamp(24px, 6.5vw, 94px);
   border-top: 1px solid #f0f0f0;
   background: $color-surface;
-  box-shadow: 0 0 6px rgb(0 0 0 / 8%);
+  box-shadow: 0 0 8px rgb(0 0 0 / 10%);
+  // sombra apenas nas laterais (corta em cima e embaixo)
+  clip-path: inset(0 -16px);
 }
 
 .header__navigation a {
