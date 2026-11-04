@@ -53,7 +53,7 @@
 
 .header__brand {
   display: block;
-  width: 138px;
+  width: 139px;
   justify-self: start;
   text-decoration: none;
 }
@@ -62,6 +62,8 @@
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 139 / 41.3;
+  object-fit: contain;
 }
 
 .header__search {
