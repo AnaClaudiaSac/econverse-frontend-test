@@ -27,11 +27,20 @@ export function Header() {
           <a href="#conta" aria-label="Minha conta"><UserCircleIcon className="header__action-icon" /></a>
           <a href="#carrinho" aria-label="Carrinho"><ShoppingCartIcon className="header__action-icon" /></a>
         </div>
-        <button className="header__menu-button" type="button" aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>☰</button>
+        <button
+          className="header__menu-button"
+          type="button"
+          aria-expanded={menuOpen}
+          aria-controls="main-navigation"
+          aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          {menuOpen ? '✕' : '☰'}
+        </button>
       </div>
-      <nav className={`header__navigation${menuOpen ? ' header__navigation--open' : ''}`} aria-label="Navegação principal">
+      <nav id="main-navigation" className={`header__navigation${menuOpen ? ' header__navigation--open' : ''}`} aria-label="Navegação principal">
         {navigationItems.map((item) => (
-          <a key={item} href="#produtos" className={item === 'Ofertas do dia' ? 'header__highlight' : ''}>
+          <a key={item} href="#produtos" className={item === 'Ofertas do dia' ? 'header__highlight' : ''} onClick={() => setMenuOpen(false)}>
             {item === 'Assinatura' ? <CrownSimpleIcon className="header__subscription-icon" /> : null}
             {item}
           </a>

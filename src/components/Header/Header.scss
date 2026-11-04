@@ -226,12 +226,24 @@
     font-size: 1.5rem;
   }
 
+  // celular: o menu abre por cima da página (painel), sem empurrar o conteúdo
   .header__navigation {
+    position: absolute;
+    z-index: 20;
+    top: 100%;
+    right: 16px;
+    left: 16px;
     display: none;
+    width: auto;
     flex-direction: column;
     align-items: stretch;
-    padding: 8px 16px;
     gap: 0;
+    margin: 0;
+    padding: 4px 0;
+    border-top: 0;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 12px 24px rgb(0 0 0 / 15%);
+    clip-path: none;
   }
 
   .header__navigation--open {
@@ -240,7 +252,11 @@
 
   .header__navigation a {
     justify-content: center;
-    padding: 13px 0;
+    padding: 14px 0;
+  }
+
+  .header__navigation a + a {
+    border-top: 1px solid #f0f0f0;
   }
 }
 
