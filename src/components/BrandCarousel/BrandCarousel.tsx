@@ -31,7 +31,7 @@ export function BrandCarousel() {
         <div ref={carouselRef} className="brands__list">
           {Array.from({ length: brandCount }, (_, index) => (
             <a key={index} href="#produtos" className="brand-chip" aria-label="Marca Econverse">
-              <img src={`${import.meta.env.BASE_URL}econverse-logo.png`} alt="Econverse" />
+              <img src={`${import.meta.env.BASE_URL}econverse-logo.svg`} alt="Econverse" />
             </a>
           ))}
         </div>

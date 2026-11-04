@@ -91,7 +91,7 @@ function App() {
       <footer className="site-footer">
         <div className="site-footer__content page-container">
           <section className="footer-brand">
-            <a className="brand--footer" href="#inicio"><img src={`${import.meta.env.BASE_URL}econverse-logo.png`} alt="Econverse" /></a>
+            <a className="brand--footer" href="#inicio"><img src={`${import.meta.env.BASE_URL}econverse-logo.svg`} alt="Econverse" /></a>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <nav className="footer-social" aria-label="Redes sociais">
               <a href="#instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" /></svg></a>
